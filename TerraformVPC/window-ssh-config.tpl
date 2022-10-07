@@ -1,4 +1,4 @@
-add-content -path c:/users/visiv/.ssh/config -value @'
+add-content -path ~/.ssh/config -value @'
 
 Host ${hostname}
   HostName ${hostname}
