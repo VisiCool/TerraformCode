@@ -1,3 +1,4 @@
+/*
 # Local .terraform directories
 **/.terraform/*
 
@@ -30,3 +31,4 @@ override.tf.json
 
 #for SSH
 window-ssh-config.tpl
+*/
