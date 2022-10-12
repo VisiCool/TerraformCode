@@ -1,3 +1,4 @@
+#get EC2 instance AMI details which is being used in main.tf file
 data "aws_ami" "ec2-ami-ubuntu" {
   most_recent = true
   owners      = ["099720109477"]
