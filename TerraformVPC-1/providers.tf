@@ -1,3 +1,4 @@
+#terraform providers
 terraform {
   required_providers {
     aws = {
@@ -7,6 +8,7 @@ terraform {
   }
 }
 /*
+# can also use for configuration 
 provider "aws" {
   shared_config_files      = "~/.aws/config"
   shared_credentials_files = "~/.aws/credentials"
@@ -18,6 +20,7 @@ provider "aws" {
   secret_key = ""
 }*/
 
+# using locally store aws credetinals and region
 provider "aws" {
   region = "us-east-1"
   profile = "default"
