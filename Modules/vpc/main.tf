@@ -18,7 +18,7 @@ resource "aws_vpc" "vpc-custom" {
 #internet gatway new
 resource "aws_internet_gateway" "igw-custom" {
   count = local.create_vpc ? 1:0  
-  vpc_id = aws_vpc.vpc-custom.id
+  vpc_id = aws_vpc.vpc-custom[0].id
   tags = {
       Name = "${var.namespace}-igw"
     }
@@ -27,7 +27,7 @@ resource "aws_internet_gateway" "igw-custom" {
 #route new
 resource "aws_route" "route-custom" {
   count = local.create_vpc ? 1:0
-  route_table_id         = aws_vpc.vpc-custom.main_route_table_id
+  route_table_id         = aws_vpc.vpc-custom[0].main_route_table_id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.igw-custom.id
 
