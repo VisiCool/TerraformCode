@@ -3,7 +3,7 @@ locals {
   create_vpc=var.create_vpc
 }
 
-#vpc new
+#vpc new custome
 resource "aws_vpc" "vpc-custom" {
   count = local.create_vpc ? 1:0
   cidr_block = var.vpc_custom_cidr
