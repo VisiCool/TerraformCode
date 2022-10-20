@@ -29,7 +29,7 @@ resource "aws_route" "route-custom" {
   count = local.create_vpc ? 1:0
   route_table_id         = aws_vpc.vpc-custom[0].main_route_table_id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.igw-custom.id
+  gateway_id             = aws_internet_gateway.igw-custom[0].id
 
 }
 
