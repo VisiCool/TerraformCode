@@ -17,7 +17,3 @@ variable "instance_name" {
   }
   
 }
-
-variable "instace_ami" {
-  type = string 
-}
