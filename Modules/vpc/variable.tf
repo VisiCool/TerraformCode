@@ -15,7 +15,7 @@ variable "namespace" {
   type = string
 }
 
-variable "enable_dns-support_default_vpc" {
+variable "enable_dns_support_default_vpc" {
   description = "dns support for default vpc"
   default = true
 }
