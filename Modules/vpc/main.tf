@@ -9,6 +9,7 @@ resource "aws_vpc" "vpc-custom" {
   cidr_block = var.vpc_custom_cidr
   enable_dns_hostnames = true
   enable_dns_support   = true
+  instance_tenancy = "default"
   tags = {
       Name = "${var.namespace}-vpc"
     }
@@ -28,7 +29,7 @@ resource "aws_internet_gateway" "igw-custom" {
 resource "aws_route" "route-custom" {
   count = local.create_vpc ? 1:0
   route_table_id         = aws_vpc.vpc-custom[0].main_route_table_id
-  destination_cidr_block = "0.0.0.0/0"
+  destination_cidr_block = "0.0.0.0/0" 
   gateway_id             = aws_internet_gateway.igw-custom[0].id
 
 }
