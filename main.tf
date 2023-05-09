@@ -5,7 +5,7 @@ terraform {
 
     # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
-      name = "TF-module main branch"
+      name = "TF-module_main_branch"
     }
   }
 }
